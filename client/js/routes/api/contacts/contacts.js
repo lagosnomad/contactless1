@@ -1,5 +1,4 @@
-//angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services',])
-var app = angular.module("contactsApp", ['ngRoute'])
+angular.module('contactsRoutes', ['ngRoute'])
     .config(function($routeProvider) {
         $routeProvider
             .when("/api/contacts", {
@@ -11,7 +10,7 @@ var app = angular.module("contactsApp", ['ngRoute'])
                     }
                 }
             })
-            .when("/new/contact", {
+            .when("/api/new/contact", {
                 controller: "NewContactController",
                 templateUrl: "contact-form.html"
             })
@@ -19,13 +18,5 @@ var app = angular.module("contactsApp", ['ngRoute'])
                 controller: "EditContactController",
                 templateUrl: "contact.html"
             })
-            .when("/docs", {
-                templateUrl: "docs.html"
-            })
-            .when("/pricing", {
-                templateUrl: "pricing.html"
-            })
-            .otherwise({
-                redirectTo: "/api/contacts"
-            })
-    })
+
+    });
